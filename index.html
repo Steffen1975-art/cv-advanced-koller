@@ -119,8 +119,8 @@
 
         .flip-card {
             background-color: transparent;
-            width: 100%; /* Nimmt die Breite der Grid-Zelle ein */
-            aspect-ratio: 1 / 1; /* Sorgt für quadratische Karten */
+            width: 100%; 
+            aspect-ratio: 1 / 1; 
             perspective: 1000px;
             cursor: pointer;
         }
@@ -132,8 +132,8 @@
             text-align: center;
             transition: transform 0.7s;
             transform-style: preserve-3d;
-            border-radius: 0.5rem; /* Abrundung für die Karte */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Leichter Schatten */
+            border-radius: 0.5rem; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
         }
 
         .flip-card.is-flipped .flip-card-inner {
@@ -156,17 +156,17 @@
         }
 
         .flip-card-front {
-            background-color: #e9ecef; /* Heller Hintergrund für die Vorderseite */
+            background-color: #e9ecef; 
             color: #333;
         }
         .flip-card-front img {
             max-width: 80%;
             max-height: 80%;
-            object-fit: contain; /* Stellt sicher, dass das Bild passt, ohne es zu verzerren */
+            object-fit: contain; 
         }
 
         .flip-card-back {
-            background-color: #0070D2; /* Salesforce Blau */
+            background-color: #0070D2; 
             color: white;
             transform: rotateY(180deg);
         }
@@ -215,7 +215,7 @@
             .lang-element:not(.active-lang-print) {
                 display: none !important;
             }
-            .flip-card { /* Im Druck nur die Vorderseite anzeigen, ohne Flip-Effekt */
+            .flip-card { 
                 box-shadow: none;
                 border: 1px solid #ddd;
             }
@@ -223,10 +223,10 @@
                 transform: none !important;
             }
             .flip-card-back {
-                display: none !important; /* Rückseite im Druck ausblenden */
+                display: none !important; 
             }
             .values-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 Spalten im Druck, wenn Platz ist */
+                grid-template-columns: repeat(2, 1fr); 
             }
         }
     </style>
@@ -722,44 +722,44 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="https://placehold.co/200x200/0070D2/FFFFFF?text=Wert+1" alt="Platzhalterbild Wert 1">
+                            <img src="https://placehold.co/200x200/0070D2/FFFFFF?text=Trust" alt="Platzhalterbild Vertrauen">
                         </div>
                         <div class="flip-card-back">
-                            <h4><span class="lang-element" lang="de">Innovation</span><span class="lang-element" lang="en" style="display:none;">Innovation</span></h4>
-                            <p><span class="lang-element" lang="de">Kontinuierliches Streben nach Verbesserung und neuen Lösungen.</span><span class="lang-element" lang="en" style="display:none;">Continuously striving for improvement and new solutions.</span></p>
+                            <h4><span class="lang-element" lang="de">Vertrauen / Zuverlässigkeit</span><span class="lang-element" lang="en" style="display:none;">Trust / Reliability</span></h4>
+                            <p><span class="lang-element" lang="de">Grundlage jeder erfolgreichen Zusammenarbeit und Partnerschaft.</span><span class="lang-element" lang="en" style="display:none;">The foundation of every successful collaboration and partnership.</span></p>
                         </div>
                     </div>
                 </div>
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="https://placehold.co/200x200/00A1E0/FFFFFF?text=Wert+2" alt="Platzhalterbild Wert 2">
+                            <img src="https://placehold.co/200x200/00A1E0/FFFFFF?text=Commitment" alt="Platzhalterbild Engagement">
                         </div>
                         <div class="flip-card-back">
-                            <h4><span class="lang-element" lang="de">Teamgeist</span><span class="lang-element" lang="en" style="display:none;">Team Spirit</span></h4>
-                            <p><span class="lang-element" lang="de">Zusammenarbeit und gegenseitige Unterstützung sind der Schlüssel zum Erfolg.</span><span class="lang-element" lang="en" style="display:none;">Collaboration and mutual support are key to success.</span></p>
+                            <h4><span class="lang-element" lang="de">Begeisterung / Engagement</span><span class="lang-element" lang="en" style="display:none;">Enthusiasm / Commitment</span></h4>
+                            <p><span class="lang-element" lang="de">Mit Leidenschaft und vollem Einsatz gemeinsame Ziele verfolgen.</span><span class="lang-element" lang="en" style="display:none;">Pursuing common goals with passion and full dedication.</span></p>
                         </div>
                     </div>
                 </div>
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="https://placehold.co/200x200/001639/FFFFFF?text=Wert+3" alt="Platzhalterbild Wert 3">
+                             <img src="https://placehold.co/200x200/001639/FFFFFF?text=Responsibility" alt="Platzhalterbild Verantwortung">
                         </div>
                         <div class="flip-card-back">
-                            <h4><span class="lang-element" lang="de">Kundenfokus</span><span class="lang-element" lang="en" style="display:none;">Customer Focus</span></h4>
-                            <p><span class="lang-element" lang="de">Die Bedürfnisse des Kunden verstehen und übertreffen.</span><span class="lang-element" lang="en" style="display:none;">Understanding and exceeding customer needs.</span></p>
+                            <h4><span class="lang-element" lang="de">Eigenverantwortung / Motivation</span><span class="lang-element" lang="en" style="display:none;">Personal Responsibility / Motivation</span></h4>
+                            <p><span class="lang-element" lang="de">Proaktives Handeln und die Motivation, stets das Beste zu geben.</span><span class="lang-element" lang="en" style="display:none;">Proactive action and the motivation to always give one's best.</span></p>
                         </div>
                     </div>
                 </div>
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="https://placehold.co/200x200/4B5563/FFFFFF?text=Wert+4" alt="Platzhalterbild Wert 4">
+                            <img src="https://placehold.co/200x200/4B5563/FFFFFF?text=Openness" alt="Platzhalterbild Offenheit">
                         </div>
                         <div class="flip-card-back">
-                            <h4><span class="lang-element" lang="de">Integrität</span><span class="lang-element" lang="en" style="display:none;">Integrity</span></h4>
-                            <p><span class="lang-element" lang="de">Ehrliches und verantwortungsbewusstes Handeln in jeder Situation.</span><span class="lang-element" lang="en" style="display:none;">Honest and responsible action in every situation.</span></p>
+                            <h4><span class="lang-element" lang="de">Offenheit / Ehrlichkeit / Direktheit</span><span class="lang-element" lang="en" style="display:none;">Openness / Honesty / Directness</span></h4>
+                            <p><span class="lang-element" lang="de">Transparente Kommunikation und ein aufrichtiger Umgang miteinander.</span><span class="lang-element" lang="en" style="display:none;">Transparent communication and sincere interaction with one another.</span></p>
                         </div>
                     </div>
                 </div>
