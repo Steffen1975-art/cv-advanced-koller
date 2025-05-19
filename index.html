@@ -160,10 +160,10 @@
             color: #333;
         }
         .flip-card-front img {
-            max-width: 100%; /* Angepasst für bessere Füllung */
-            max-height: 100%; /* Angepasst für bessere Füllung */
-            object-fit: cover; /* Stellt sicher, dass das Bild die Karte füllt, ggf. beschneiden */
-            border-radius: 0.5rem; /* Abrundung für das Bild selbst */
+            max-width: 100%; 
+            max-height: 100%;
+            object-fit: cover; 
+            border-radius: 0.5rem; 
         }
 
         .flip-card-back {
@@ -248,6 +248,13 @@
             </svg>
             <span class="lang-element" lang="de">English</span>
             <span class="lang-element" lang="en" style="display:none;">Deutsch</span>
+        </button>
+        <button id="requestMeetingButton" onclick="requestMeeting()" class="action-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+            </svg>
+            <span class="lang-element" lang="de">Termin anfragen</span>
+            <span class="lang-element" lang="en" style="display:none;">Request Meeting</span>
         </button>
     </div>
 
@@ -724,7 +731,7 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="Trust.jpg" alt="Icon für Vertrauen und Zuverlässigkeit">
+                            <img src="Trust.jpg" alt="Icon: Vertrauensvoller Handschlag vor Netzwerk">
                         </div>
                         <div class="flip-card-back">
                             <h4><span class="lang-element" lang="de">Vertrauen / Zuverlässigkeit</span><span class="lang-element" lang="en" style="display:none;">Trust / Reliability</span></h4>
@@ -735,7 +742,7 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="Enthusiasm.jpg" alt="Icon für Begeisterung und Engagement">
+                            <img src="Enthusiasm.jpg" alt="Icon: Dynamischer Pfeil mit Partikeln für Begeisterung">
                         </div>
                         <div class="flip-card-back">
                             <h4><span class="lang-element" lang="de">Begeisterung / Engagement</span><span class="lang-element" lang="en" style="display:none;">Enthusiasm / Commitment</span></h4>
@@ -746,7 +753,7 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                             <img src="Personal Responsibility.jpg" alt="Icon für Eigenverantwortung und Motivation">
+                             <img src="Personal Responsibility.jpg" alt="Icon: Kompass mit Hand für Eigenverantwortung">
                         </div>
                         <div class="flip-card-back">
                             <h4><span class="lang-element" lang="de">Eigenverantwortung / Motivation</span><span class="lang-element" lang="en" style="display:none;">Personal Responsibility / Motivation</span></h4>
@@ -757,7 +764,7 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="Openness.jpg" alt="Icon für Offenheit, Ehrlichkeit und Direktheit">
+                            <img src="Openness.jpg" alt="Icon: Offener Weg oder Buch für Offenheit">
                         </div>
                         <div class="flip-card-back">
                             <h4><span class="lang-element" lang="de">Offenheit / Ehrlichkeit / Direktheit</span><span class="lang-element" lang="en" style="display:none;">Openness / Honesty / Directness</span></h4>
@@ -869,6 +876,30 @@
                 card.classList.toggle('is-flipped');
             });
         });
+
+        // Funktion für den Meeting-Request-Button
+        function requestMeeting() {
+            const recipientEmail = 'steffen.s.koller@gmail.com';
+            let eventTitle = '';
+            let eventDetails = '';
+
+            if (currentLang === 'de') {
+                eventTitle = 'Terminanfrage Steffen Koller';
+                eventDetails = 'Hallo Herr Koller,\n\nich würde gerne einen Termin für ein Gespräch vorschlagen, um mögliche Synergien zu besprechen.\n\nBitte lassen Sie mich wissen, welche Zeiten Ihnen passen würden.\n\nMit freundlichen Grüßen';
+            } else {
+                eventTitle = 'Meeting Request Steffen Koller';
+                eventDetails = 'Hello Mr. Koller,\n\nI would like to propose a time for a meeting to discuss potential synergies.\n\nPlease let me know what times would work for you.\n\nSincerely';
+            }
+
+            const encodedTitle = encodeURIComponent(eventTitle);
+            const encodedDetails = encodeURIComponent(eventDetails);
+            
+            // Erstellt einen Link, der den Kalender des Nutzers öffnet, um ein Event zu erstellen,
+            // bei dem Ihre E-Mail-Adresse als Teilnehmer hinzugefügt wird.
+            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodedTitle}&details=${encodedDetails}&add=${recipientEmail}`;
+            
+            window.open(googleCalendarUrl, '_blank');
+        }
 
         // Event Listener, um die Initialisierung nach dem Laden des DOMs auszuführen
         document.addEventListener('DOMContentLoaded', initializeLanguage);
